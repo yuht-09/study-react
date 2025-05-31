@@ -5,30 +5,7 @@ import Image from "next/image";
 import Head from "next/head";
 import { Footer } from "../components/footer";
 import Links from "../components/links";
-import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
-
-const Dictaphone = () => {
-  const {
-    transcript,
-    listening,
-    resetTranscript,
-    browserSupportsSpeechRecognition
-  } = useSpeechRecognition();
-
-  if (!browserSupportsSpeechRecognition) {
-    return <span>Browser doesn&apos;t support speech recognition.</span>;
-  }
-
-  return (
-    <div>
-      <p>Microphone: {listening ? 'on' : 'off'}</p>
-      <button onClick={() => SpeechRecognition.startListening({ continuous: true })}>Start</button>
-      <button onClick={SpeechRecognition.stopListening}>Stop</button>
-      <button onClick={resetTranscript}>Reset</button>
-      <p>{transcript}</p>
-    </div>
-  );
-};
+import Dictaphone from "../components/voice";
 
 export default function About() {
   return (
