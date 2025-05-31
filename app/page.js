@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Footer } from "./components/footer";
 import Links from "./components/links";
+import Dictaphone from "./components/voice";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
           </li>
         </ol>
         <Links />
+        <Dictaphone />
       </main>
       <Footer />
     </div>
